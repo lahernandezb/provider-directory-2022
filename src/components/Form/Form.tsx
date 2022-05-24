@@ -1,6 +1,18 @@
-import { useState } from "react";
+import React, {
+  useState,
+  Dispatch,
+  SetStateAction,
+  FormEventHandler,
+  SyntheticEvent,
+} from "react";
+import { Provider } from "../Provider/Provider";
 
-const Form = () => {
+export interface FormProps {
+  providers: Provider[];
+  setProviders: Dispatch<SetStateAction<Provider[]>>;
+}
+
+const Form = ({ providers, setProviders }: FormProps) => {
   const [formState, setFormState] = useState({
     lastName: "",
     firstName: "",
@@ -9,6 +21,21 @@ const Form = () => {
     practice: "",
   });
   const { lastName, firstName, email, specialty, practice } = formState;
+
+  const handleSubmit = (e: SyntheticEvent) => {
+    e.preventDefault();
+
+    // create object with keys that match the sample data. I prefer camel case in as html attributes to avoid confusiong with BEM naming convention for classses
+    const incomingProvider = {
+      last_name: lastName,
+      first_name: firstName,
+      email_address: email,
+      specialty,
+      practice_name: practice,
+    };
+
+    setProviders([incomingProvider, ...providers]);
+  };
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setFormState({
@@ -20,7 +47,7 @@ const Form = () => {
   return (
     <div className="form-container">
       <p className="form-title">Create Provider</p>
-      <form className="form" action="submit">
+      <form className="form" action="submit" onSubmit={handleSubmit}>
         <label htmlFor="lastName">
           Last Name
           <input
