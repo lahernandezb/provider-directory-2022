@@ -8,11 +8,10 @@ import React, {
 import { Provider } from "../Provider/Provider";
 
 export interface FormProps {
-  providers: Provider[];
   setProviders: Dispatch<SetStateAction<Provider[]>>;
 }
 
-const Form = ({ providers, setProviders }: FormProps) => {
+const Form = ({ setProviders }: FormProps) => {
   const [formState, setFormState] = useState({
     lastName: "",
     firstName: "",
@@ -34,7 +33,10 @@ const Form = ({ providers, setProviders }: FormProps) => {
       practice_name: practice,
     };
 
-    setProviders([incomingProvider, ...providers]);
+    setProviders((previousProviders) => [
+      incomingProvider,
+      ...previousProviders,
+    ]);
   };
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {

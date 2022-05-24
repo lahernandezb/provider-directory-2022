@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="app">
       <h1 className="app__heading">Provider Directory</h1>
-      <Form {...{ providers, setProviders }} />
-      <ProviderList providers={providers} />
+      <Form setProviders={setProviders} />
+      <ProviderList {...{ providers, setProviders }} />
     </div>
   );
 }
