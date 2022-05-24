@@ -37,6 +37,14 @@ const Form = ({ setProviders }: FormProps) => {
       incomingProvider,
       ...previousProviders,
     ]);
+
+    setFormState({
+      lastName: "",
+      firstName: "",
+      email: "",
+      specialty: "",
+      practice: "",
+    });
   };
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
