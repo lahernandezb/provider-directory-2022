@@ -15,7 +15,8 @@ interface ProviderItemProps {
 
 const ProviderItem = ({ provider, setDeleteQueue }: ProviderItemProps) => {
   const toggleCheckbox = (e: React.FormEvent<HTMLInputElement>) => {
-    // if the click checks a provider's checkbox, lets add them to the deletion queue for a bulk delete. Otherwise, let's do remove them from the deletion queue.
+    // if the click checks a provider's checkbox, lets add them to the deletion queue for a bulk delete. Otherwise,
+    // let's do remove them from the deletion queue.
     const providerClicked = e.currentTarget;
     if (providerClicked.checked) {
       setDeleteQueue((prevState) => [...prevState, providerClicked.value]);

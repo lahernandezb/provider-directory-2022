@@ -24,7 +24,8 @@ const Form = ({ setProviders }: FormProps) => {
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
 
-    // create object with keys that match the sample data. I prefer camel case in as html attributes to avoid confusiong with BEM naming convention for classses
+    // create object with keys that match the sample data. I prefer camel case in as html attributes to avoid
+    // confusiong with BEM naming convention for classses
     const incomingProvider = {
       last_name: lastName,
       first_name: firstName,

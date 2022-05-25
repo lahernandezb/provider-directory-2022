@@ -1,12 +1,10 @@
 .app {
   background-color: #ffffff;
-  // display: grid;
-  // grid-template-columns: 1fr 2fr;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 1rem;
+
   &__heading {
     text-align: center;
-    // grid-column-start: span 2;
     color: #003462;
   }
 
