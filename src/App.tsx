@@ -11,8 +11,10 @@ function App() {
   return (
     <div className="app">
       <h1 className="app__heading">Provider Directory</h1>
-      <Form setProviders={setProviders} />
-      <ProviderList {...{ providers, setProviders }} />
+      <div className="app__content">
+        <Form setProviders={setProviders} />
+        <ProviderList {...{ providers, setProviders }} />
+      </div>
     </div>
   );
 }

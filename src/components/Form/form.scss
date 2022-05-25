@@ -1,15 +1,19 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-bottom: 2rem;
   padding: 0.5rem;
 }
 .form-title {
   font-size: 1.25rem;
+  text-align: center;
 }
 
 .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   &__label {
     margin: 0.5rem 0;
     display: inline-block;

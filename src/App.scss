@@ -9,4 +9,14 @@
     // grid-column-start: span 2;
     color: #003462;
   }
+
+  &__content {
+    // Todo: future enhancement: create custom properties for breakpoints instead of using px
+    max-width: 800px;
+    margin: auto;
+    @media (min-width: 550px) {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
 }
