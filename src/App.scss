@@ -1,0 +1,20 @@
+.app {
+  background-color: #ffffff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 1rem;
+
+  &__heading {
+    text-align: center;
+    color: #003462;
+  }
+
+  &__content {
+    // Todo: future enhancement: create custom properties for breakpoints instead of using px
+    max-width: 800px;
+    margin: auto;
+    @media (min-width: 550px) {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}

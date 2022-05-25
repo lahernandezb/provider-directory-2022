@@ -1,3 +1,23 @@
+### Notes
+
+Having more time I would do the following:
+
+- Create the tests below with React Testing Library
+  - App
+    - Test that it renders.
+    - Add snapshot tests
+  - SortDropdown
+    - Test that the dropdown renders
+    - Test that the order is updated on when click event is fired
+  - ProviderList
+    - Test the deleting functionaity by
+      - Marking a single and multiple options and firing a click event on the remove button.
+      - Start with multiple options selected, fire click events on their options to unselect, then ensure they were not
+        removed.
+- Add more robust validation around the form like the following: error message pop-up on invalid input, validate for unique emails
+- Add custom hook to persist providers to localstorage
+- Make the styling more pleasant
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
