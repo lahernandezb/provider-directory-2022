@@ -18,7 +18,6 @@ const ProviderList = ({ providers, setProviders }: ProviderLsitProps) => {
 
   const handleSort = (e: ChangeEvent<HTMLSelectElement>) => {
     // When indexing an enum TS does not know if the string is a property of Fields. The keyof operator returrns a unions of protery names of the type Fields. When you create an enum, TypeScript creates both a type (which is a subtype of number) and a value (the enum object that you can reference). When you write keyof Fields, you're going to get a union of the literal property names of number. To get the property names of the enum object, you can use keyof typeof Fields.
-
     const sortColumn =
       Fields[e.currentTarget.value as keyof typeof Fields].split("-")[0];
     const sortDirection =
@@ -26,12 +25,16 @@ const ProviderList = ({ providers, setProviders }: ProviderLsitProps) => {
 
     const sortedProviders = [...providers].sort(
       (a: { [index: string]: any }, b: { [index: string]: any }) => {
-        if (sortDirection === "asc") {
-          return a[sortColumn] > b[sortColumn] ? 1 : -1;
+        if (a[sortColumn] === b[sortColumn]) return 0;
+
+        if (a[sortColumn] < b[sortColumn]) {
+          return sortDirection === "desc" ? 1 : -1;
         }
-        if (sortDirection === "desc") {
-          return a[sortColumn] < b[sortColumn] ? -1 : 1;
+
+        if (a[sortColumn] > b[sortColumn]) {
+          return sortDirection === "desc" ? -1 : 1;
         }
+
         return 0;
       }
     );
