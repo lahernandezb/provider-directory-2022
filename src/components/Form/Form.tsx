@@ -6,6 +6,7 @@ import React, {
   SyntheticEvent,
 } from "react";
 import { Provider } from "../Provider/Provider";
+import "./form.scss";
 
 export interface FormProps {
   setProviders: Dispatch<SetStateAction<Provider[]>>;
@@ -58,7 +59,7 @@ const Form = ({ setProviders }: FormProps) => {
     <div className="form-container">
       <p className="form-title">Create Provider</p>
       <form className="form" action="submit" onSubmit={handleSubmit}>
-        <label htmlFor="lastName">
+        <label className="form__label" htmlFor="lastName">
           Last Name
           <input
             required
@@ -70,7 +71,7 @@ const Form = ({ setProviders }: FormProps) => {
             className="form__lastName"
           />
         </label>
-        <label htmlFor="firstName">
+        <label className="form__label" htmlFor="firstName">
           First Name
           <input
             required
@@ -82,7 +83,7 @@ const Form = ({ setProviders }: FormProps) => {
             className="form__firstName"
           />
         </label>
-        <label htmlFor="email">
+        <label className="form__label" htmlFor="email">
           Email
           <input
             required
@@ -94,7 +95,7 @@ const Form = ({ setProviders }: FormProps) => {
             className="form__email"
           />
         </label>
-        <label htmlFor="specialty">
+        <label className="form__label" htmlFor="specialty">
           Specialty
           <input
             required
@@ -106,7 +107,7 @@ const Form = ({ setProviders }: FormProps) => {
             className="form__specialty"
           />
         </label>
-        <label htmlFor="practice">
+        <label className="form__label" htmlFor="practice">
           Practice Name
           <input
             required
@@ -118,7 +119,7 @@ const Form = ({ setProviders }: FormProps) => {
             className="form__practice"
           />
         </label>
-        <input type="submit" value="submit" />
+        <input className="form__submit" type="submit" value="Add Provider" />
       </form>
     </div>
   );

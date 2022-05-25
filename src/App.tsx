@@ -3,6 +3,8 @@ import Form from "./components/Form/Form";
 import ProviderList from "./components/ProviderList/ProviderList";
 import providerData from "./sample-data.json";
 
+import "./App.scss";
+
 function App() {
   const [providers, setProviders] = useState(providerData);
 

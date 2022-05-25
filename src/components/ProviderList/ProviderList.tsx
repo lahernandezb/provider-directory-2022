@@ -7,6 +7,7 @@ import {
 } from "react";
 import ProviderItem, { Provider } from "../Provider/Provider";
 import SortDropdown, { Fields } from "../SortDropdown/SortDropdown";
+import "./providerList.scss";
 
 export interface ProviderLsitProps {
   providers: Provider[];

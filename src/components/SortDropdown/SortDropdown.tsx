@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+import "./sortDropdown.scss";
 
 export enum Fields {
   "First Name (asc)" = "first_name-asc",
@@ -33,7 +34,7 @@ const SortDropdown = ({ handleSort }: SortDropdownProps) => {
         Sort By
       </label>
       <select
-        className="sort"
+        className="sort__select"
         name="sortType"
         id="sortType"
         onChange={handleSort}

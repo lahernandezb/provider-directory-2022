@@ -1,0 +1,25 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+}
+.form-title {
+  font-size: 1.25rem;
+}
+
+.form {
+  &__label {
+    margin: 0.5rem 0;
+    display: inline-block;
+  }
+  &__label > * {
+    display: block;
+    // margin-top: 1rem;
+  }
+
+  &__submit {
+    margin-top: 1rem;
+  }
+}
