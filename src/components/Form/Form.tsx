@@ -2,7 +2,6 @@ import React, {
   useState,
   Dispatch,
   SetStateAction,
-  FormEventHandler,
   SyntheticEvent,
 } from "react";
 import { Provider } from "../Provider/Provider";
